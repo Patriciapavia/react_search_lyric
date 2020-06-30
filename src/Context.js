@@ -12,7 +12,7 @@ export class Provider extends Component {
     const api_key = "be58d4dd8ad4c7c1bc8b65bc552fe4c1";
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${api_key}`
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=30&country=us&f_has_lyrics=1&apikey=${api_key}`
       )
       .then((res) => {
         // console.log(res.data);
