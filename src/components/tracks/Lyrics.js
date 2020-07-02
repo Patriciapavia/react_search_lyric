@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Spiner from "../layout/Spiner";
-
+import { Link } from "react-router-dom";
 class Lyrics extends Component {
   state = {
     track: {},
@@ -23,6 +23,7 @@ class Lyrics extends Component {
         );
       })
       .then((res) => {
+        console.log(res.data);
         this.setState({
           track: res.data.message.body.track,
         });
@@ -41,7 +42,25 @@ class Lyrics extends Component {
     ) {
       return <Spiner />;
     } else {
-      return <h1>data returned</h1>;
+      return (
+        <>
+          <Link to="/" className="btn btn-dark btn-sm mb-4">
+            Go Back
+          </Link>
+          <div className="card">
+            <div className="card-header">
+              <h3 className="text-center">
+                {track.track_name} By {track.artist_name}
+              </h3>
+              <div className="card-body">
+                <div className="card-text">
+                  <p>{lyrics.lyrics_body}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      );
     }
   }
 }
