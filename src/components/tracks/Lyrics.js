@@ -52,11 +52,26 @@ class Lyrics extends Component {
               <h3 className="text-center">
                 {track.track_name} By {track.artist_name}
               </h3>
+
               <div className="card-body">
                 <div className="card-text">
                   <p>{lyrics.lyrics_body}</p>
                 </div>
               </div>
+              <li className="list-group-item">
+                <strong>Updated Time:</strong>
+                {lyrics.updated_time}
+              </li>
+              <li className="list-group-item">
+                <strong>Expicit Words</strong>:{}
+                {track.explicit === 0 ? "No" : "Yes"}
+              </li>
+              <li className="list-group-item">
+                <strong>Track lating:</strong>:{track.track_rating}
+              </li>
+              <li className="list-group-item">
+                <strong>Album Name:</strong>:{track.album_name}
+              </li>
             </div>
           </div>
         </>
